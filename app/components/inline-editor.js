@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-inline-editor/components/inline-editor';

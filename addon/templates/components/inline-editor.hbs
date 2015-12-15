@@ -1,0 +1,23 @@
+{{#if inEditMode}}
+  {{#click-outside action=(action "onClickOutside") except-selector=".btn-cancel, .btn-delete, .btn-save"}}
+    {{textarea
+      placeholder=placeholderText
+      value=editingContent
+      escape-press=(action 'onEscape')
+      focus-in=(action 'onFocus')
+      focus-out=(action 'onEscape')
+      key-down=(action 'onKeyDown')
+    }}
+  {{/click-outside}}
+  {{#if showSaveButton}}
+    <a class="btn btn-success btn-save" {{action 'saveContent'}}>{{t 'common.save'}}</a>
+  {{/if}}
+  {{#if showCancelButton}}
+    <a class="btn-cancel" {{action 'stopEditing'}}>{{t 'common.cancel'}}</a>
+  {{/if}}
+  {{#if showDeleteButton}}
+    <a class="btn-delete" {{action 'deleteContent'}}>{{t 'common.delete'}}</a>
+  {{/if}}
+{{else}}
+  <p {{action 'startEditing'}}>{{markdown-to-html markdown=content}}</p>
+{{/if}}
