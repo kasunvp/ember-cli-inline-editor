@@ -1,6 +1,6 @@
 # Ember-cli-inline-editor
 
-This README outlines the details of collaborating on this Ember addon.
+This is not in working condition yet.
 
 ## Installation
 
